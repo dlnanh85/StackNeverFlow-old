@@ -1,0 +1,43 @@
+/* Mobile + Tablet */
+@media (max-width: 1023px) {
+    .ti-menu {
+        display: block !important;
+    }
+
+    #navbarSupportedContent {
+        /* display:none; */
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .profile-nav-item {
+        display: none
+    }
+
+    .brand {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 740px) {
+
+}
+
+/* Tablet */
+@media (min-width: 741px) and (max-width: 1023px) {
+
+}
+
+
+/* PC */
+@media (min-width: 1024px) {
+    
+}
