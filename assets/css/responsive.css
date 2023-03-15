@@ -2,27 +2,74 @@
 @media (max-width: 1023px) {
     .ti-menu {
         display: block !important;
-    }
-
-    #navbarSupportedContent {
-        /* display:none; */
+        position: absolute;
+        right: 10px;
+        clear: both;
     }
 
     nav {
-        display: flex;
-        flex-direction: column;
+        /* display: none !important; */
+        width: 100%;
+        margin-top: 10px;
     }
 
-    .navbar-nav {
-        flex-direction: column;
+    @keyframes navAppear {
+        from {display:none;}
+        to {display:block;}
     }
 
-    .profile-nav-item {
-        display: none
+    .container {
+        max-width: 100% !important;
+        padding: 0;
+    }
+
+    header>div {
+        padding: 0 10px;
+        overflow: hidden;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+        border-radius: 0;
+    }
+
+    nav>div {
+        width: 100%;
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    nav .navbar-nav {
+        flex-direction: column !important;
+        justify-content: flex-start;
+    }
+
+    .profile-avatar {
+        display: none !important;
     }
 
     .brand {
-        width: 100%;
+        
+    }
+
+    .container nav {
+        position: initial !important;
+    }
+
+    .container header {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .blog-item {
+        max-height: 200px;
+    }
+
+    .blog-item .blog-info {
+        overflow: hidden;
+    }
+
+    .blog-item .img-dominant-tech {
+        display: none;
     }
 }
 
@@ -39,5 +86,7 @@
 
 /* PC */
 @media (min-width: 1024px) {
-    
+    .container {
+        max-width: 80% !important;
+    }
 }
