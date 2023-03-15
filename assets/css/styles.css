@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+p {
+    margin: 0;
+}
+
 /* SEMANTIC */
 .hidden {
     display: none;
@@ -38,6 +42,21 @@ body {
 }
 
 /* NAV BAR */
+.container {
+    max-width: 80% !important;
+}
+
+.header .ti-menu {
+    display: none !important;
+    text-align: center;
+    vertical-align: center;
+    font-size: 25px;
+}
+
+.header .ti-menu:hover {
+    cursor: pointer;
+}
+
 .header .nav-link {
     min-width: 100px;
     border-radius: 5px;
@@ -68,7 +87,7 @@ body {
 
 /* BLOG */
 .blog-item {
-    padding: 20px;
+    padding: 24px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -81,71 +100,44 @@ body {
     animation: blogItemHover-bg 0.5s ease forwards;
 }
 
-.blog-item:hover .blog--title {
-    cursor: pointer;
-    animation: blogItemHover-title 0.5s ease forwards;
-}
-
-.blog-item .blog--title {
-    animation: blogItemHover-title-reversed 0.5s ease forwards;
-}
-
-.blog-item .blog-info p {
-    animation: blogItemHover-content-reversed 0.5s ease forwards;
-}
-
-.blog-title {
+.blog-item .blog-info {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.blog-title h1 {
+.blog-item .blog-title {
     margin-bottom: 0 !important;
+    animation: blogItemHover-title-reversed 0.5s ease forwards;
 }
 
-.blog-tag {
+.blog-item:hover .blog-title {
+    cursor: pointer;
+    animation: blogItemHover-title 0.5s ease forwards;
+}
+
+.blog-item .blog-tag {
     margin: 0;
     display: block;
     height: 30px;
 }
 
-p {
-    margin: 0;
-}
-
-.blog-list .blog-item img {
-    /* min-width: 56px; */
-    /* max-width: 56px; */
+.blog-item img {
     width: 40px;
     margin-left: 10px;
     margin-right: 20px;
     animation: blogItemHover-img-reversed 0.5s ease forwards;
-    /* height: 50px; */
-    /* aspect-ratio: 1/1; */
 }
 
-.ti-menu {
-    display: none !important;
-    /* margin: auto; */
-    text-align: center;
-    vertical-align: center;
-    font-size: 25px;
-}
-
-.ti-menu:hover {
-    cursor: pointer;
-}
-
-.blog-list .blog-item:hover img {
+.blog-item:hover img {
     animation: blogItemHover-img 0.5s ease forwards;
 }
 
-.blog-tag a {
+.blog-item .blog-tag a {
     text-decoration: none;
 }
 
-.blog-tag a:hover {
+.blog-item .blog-tag a:hover {
     cursor: pointer;
     color: white;
     animation: tagHover 0.3s ease forwards;
@@ -176,16 +168,6 @@ p {
 @keyframes blogItemHover-img-reversed {
     from {width: 50px;}
     to {width: 40px;}
-}
-
-
-@keyframes blogItemHover-content {
-    from {font-size: 1rem;}
-    to {font-size: 1.1rem;}
-}
-@keyframes blogItemHover-content-reversed {
-    from {font-size: 1.1rem;}
-    to {font-size: 1rem;}
 }
 
 @keyframes blogItemHover-bg {

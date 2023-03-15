@@ -1,6 +1,5 @@
 // Redirect to item
 blogItems = document.querySelectorAll('.blog-item')
-blogTitles = document.querySelectorAll('.blog-item .blog-info p')
 
 blogItems.forEach(blogitem => {
     blogitem.addEventListener('click', (event) => {

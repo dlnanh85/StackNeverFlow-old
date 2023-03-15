@@ -1,92 +1,72 @@
 /* Mobile + Tablet */
 @media (max-width: 1023px) {
-    .ti-menu {
+    .container {
+        max-width: 100% !important;
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .header>div {
+        padding: 0 10px;
+    }
+
+    .header .ti-menu {
         display: block !important;
         position: absolute;
         right: 10px;
         clear: both;
     }
 
-    nav {
-        /* display: none !important; */
+    .header nav {
         width: 100%;
         margin-top: 10px;
+        position: initial !important;
     }
 
-    @keyframes navAppear {
-        from {display:none;}
-        to {display:block;}
-    }
-
-    .container {
-        max-width: 100% !important;
-        padding: 0;
-    }
-
-    header>div {
-        padding: 0 10px;
-        overflow: hidden;
-    }
-
-    .nav-link {
-        padding: 10px 0;
-        border-radius: 0;
-    }
-
-    nav>div {
+    .header nav>div {
         width: 100%;
         background-color: rgba(0,0,0,0.3);
     }
 
-    nav .navbar-nav {
+    .header .navbar-nav {
         flex-direction: column !important;
         justify-content: flex-start;
+    }
+
+    .header .nav-item {
+        padding: 0 !important;
+    }
+
+    .header .nav-link {
+        padding: 10px 0;
+        border-radius: 0;
     }
 
     .profile-avatar {
         display: none !important;
     }
-
-    .brand {
-        
-    }
-
-    .container nav {
-        position: initial !important;
-    }
-
-    .container header {
-        flex-direction: column;
-        align-items: flex-start !important;
+    
+    .main-content {
+        margin-top: 20px !important;
     }
 
     .blog-item {
         max-height: 200px;
     }
-
-    .blog-item .blog-info {
-        overflow: hidden;
-    }
-
+    
     .blog-item .img-dominant-tech {
         display: none;
     }
-}
 
-/* Mobile */
-@media (max-width: 740px) {
+    .blog-item .blog-title {
+        font-size: 2rem !important;
+    }
 
-}
-
-/* Tablet */
-@media (min-width: 741px) and (max-width: 1023px) {
-
-}
-
-
-/* PC */
-@media (min-width: 1024px) {
-    .container {
-        max-width: 80% !important;
+    .blog-item .blog-shorten-content {
+        overflow: hidden;
     }
 }
