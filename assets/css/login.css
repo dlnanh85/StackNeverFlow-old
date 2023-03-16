@@ -1,0 +1,40 @@
+.w-35 {
+    width: 35%;
+}
+
+.less-shaded-bg {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.border-none {
+    border: none;
+}
+
+.login-form input::placeholder {
+    color: #ddd;
+}
+
+.login-form input[type="submit"]:hover {
+    animation: loginHover 0.2s ease forwards;
+}
+
+.login-form input:focus {
+    outline: none;
+    background-color: rgba(50, 50, 50, 0.5);
+}
+
+.forget-password a:hover {
+    animation: forgetHover 0.1s ease forwards;
+}
+
+@keyframes loginHover {
+    to {
+        background-color: rgba(90, 90, 90, 0.7);
+    }
+}
+
+@keyframes forgetHover {
+    to {
+        font-size: 1.1rem;
+    }
+}
