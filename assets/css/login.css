@@ -10,6 +10,10 @@
     border: none;
 }
 
+.login-container {
+    min-width: 500px;
+}
+
 .login-form input::placeholder {
     color: #ddd;
 }
@@ -36,5 +40,15 @@
 @keyframes forgetHover {
     to {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1023px) {
+
+}
+
+@media (max-width: 739px) {
+    .login-container {
+        min-width: 100%;
     }
 }
