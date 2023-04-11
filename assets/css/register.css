@@ -1,0 +1,20 @@
+input {
+    width: 100%;
+}
+
+
+.name-input {
+
+}
+
+.name-input input {
+    justify-content: space-between;
+}
+
+.username-input {
+
+}
+
+.password-input {
+
+}

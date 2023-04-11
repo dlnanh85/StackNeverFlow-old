@@ -4,6 +4,7 @@ What may include?
 - A page to list all the blogs
 - A page to serve each blog
 - Login screen
+- Register screen
 
 Feature?
 - Search for blog
