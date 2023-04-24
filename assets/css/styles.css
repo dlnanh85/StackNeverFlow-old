@@ -1,10 +1,16 @@
+:root {
+    --dark-green: #667066;
+    --brighter-dark-green: #808880;
+
+    --white-green: #f9fff9;
+}
+
 html {
     height: 100%;
 }
 
 body {
     background-image: url("/assets/img/bg.jpg");
-    /* background-image: linear-gradient(#2C69D1,#0ABCF9); */
     background-repeat: repeat-y;
     background-size: 100% auto;
     box-sizing: border-box;
@@ -33,12 +39,20 @@ p {
     margin: 0;
 }
 
+.text-white {
+    color: var(--white-green) !important;
+}
+
 .text-main {
-    color: #555;
+    color: var(--dark-green);
 }
 
 .text-muted {
-    color: #ddd !important;
+    color: var(--brighter-dark-green) !important;
+}
+
+.text-dark {
+    color: var(--dark-green) !important;
 }
 
 .shaded-bg {
@@ -104,12 +118,7 @@ p {
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-}
-
-
-.blog-item:hover {
-    cursor: pointer;
-    animation: blogItemHover-bg 0.5s ease forwards;
+    background-color: var(--white-green);
 }
 
 .blog-item .blog-info {
@@ -121,11 +130,6 @@ p {
 .blog-item .blog-title {
     margin-bottom: 0 !important;
     animation: blogItemHover-title-reversed 0.5s ease forwards;
-}
-
-.blog-item:hover .blog-title {
-    cursor: pointer;
-    animation: blogItemHover-title 0.5s ease forwards;
 }
 
 .blog-item .blog-tag {
@@ -141,17 +145,32 @@ p {
     animation: blogItemHover-img-reversed 0.5s ease forwards;
 }
 
-.blog-item:hover img {
-    animation: blogItemHover-img 0.5s ease forwards;
-}
-
 .blog-item .blog-tag a {
     text-decoration: none;
 }
 
+.blog-item:hover {
+    cursor: pointer;
+    animation: blogItemHover-bg 0.5s ease forwards;
+    color: var(--white-green);
+}
+
+.blog-item:hover .blog-title {
+    cursor: pointer;
+    animation: blogItemHover-title 0.5s ease forwards;
+}
+
+.blog-item:hover .blog-tag,
+.blog-item:hover .blog-tag a {
+    color: var(--white-green) !important;
+}
+
+.blog-item:hover img {
+    animation: blogItemHover-img 0.5s ease forwards;
+}
+
 .blog-item .blog-tag a:hover {
     cursor: pointer;
-    color: white;
     animation: tagHover 0.3s ease forwards;
 }
 
@@ -183,6 +202,6 @@ p {
 }
 
 @keyframes blogItemHover-bg {
-    from {background-color: rgba(0, 0, 0, 0.5);}
-    to {background-color:rgba(0, 0, 0, 0.3)}
+    from {}
+    to {background-color:rgba(84, 94, 87, 0.5)}
 }
