@@ -97,6 +97,23 @@ p {
     cursor: pointer;
 }
 
+/* TAGS */
+.tag {
+    margin: 0;
+    display: block;
+    height: 30px;
+}
+
+.tag a {
+    text-decoration: none;
+    color: var(--dark-green);
+}
+
+.tag a:hover {
+    color: var(--brighter-dark-green);
+}
+
+
 /* FOOTER */
 .footer {
     height: 3rem;

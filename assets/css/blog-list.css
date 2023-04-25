@@ -38,21 +38,11 @@
     animation: blogItemHover-title-reversed 0.5s ease forwards;
 }
 
-.blog-item .blog-tag {
-    margin: 0;
-    display: block;
-    height: 30px;
-}
-
 .blog-item img {
     width: 40px;
     margin-left: 10px;
     margin-right: 20px;
     animation: blogItemHover-img-reversed 0.5s ease forwards;
-}
-
-.blog-item .blog-tag a {
-    text-decoration: none;
 }
 
 .blog-item:hover {
@@ -66,8 +56,8 @@
     animation: blogItemHover-title 0.5s ease forwards;
 }
 
-.blog-item:hover .blog-tag,
-.blog-item:hover .blog-tag a {
+.blog-item:hover .tag,
+.blog-item:hover .tag a {
     color: var(--white-green) !important;
 }
 
@@ -75,7 +65,7 @@
     animation: blogItemHover-img 0.5s ease forwards;
 }
 
-.blog-item .blog-tag a:hover {
+.blog-item .tag a:hover {
     cursor: pointer;
     animation: tagHover 0.3s ease forwards;
 }

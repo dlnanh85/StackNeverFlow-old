@@ -1,0 +1,7 @@
+.main-content {
+    background-color: var(--white-green);
+}
+
+.main-content .content .text {
+    font-size: 1.1rem;
+}
