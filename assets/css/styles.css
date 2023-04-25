@@ -56,3 +56,49 @@ p {
 .round-shape {
     border-radius: 50%;
 }
+
+/* NAV BAR */
+.header .ti-menu {
+    display: none !important;
+    text-align: center;
+    vertical-align: center;
+    font-size: 25px;
+}
+
+.header .ti-menu:hover {
+    cursor: pointer;
+}
+
+.header .nav-link {
+    min-width: 100px;
+    border-radius: 5px;
+}
+
+.header .nav-link:hover {
+    cursor: pointer;
+    animation: navHover 0.5s forwards;
+}
+
+@keyframes navHover {
+    to {
+        background-color: rgba(100, 100, 100, 0.2);
+    }
+}
+
+.header .profile-avatar {
+    align-items: center;
+}
+
+.header .profile-avatar img {
+    width: 2rem;
+}
+
+.header .profile-avatar img:hover {
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+    height: 3rem;
+    color: var(--brighter-dark-green);
+}
