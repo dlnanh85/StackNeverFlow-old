@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5.0 -->
+    <link href="./assets/css/reset.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- END: Bootstrap 5.0 -->
+    <link rel="stylesheet" href="./assets/icon/themify-icons.css">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+    <link href="./assets/css/responsive.css" rel="stylesheet">
+    <link href="./assets/css/create-blog.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container text-main">
+        <header class="header d-flex align-items-center position-relative mt-4">
+            <div class="d-flex align-items-center">
+                <div class="brand h3"><a class="text-decoration-none text-reset" href="index.html">StackNeverFlow</a></div>
+                <span class="ti-menu"></span>
+            </div>
+                <nav class="navbar position-absolute end-0">
+                    <div>
+                        <ul class="navbar-nav flex-row">
+                            <li class="nav-item px-1"><a class="nav-link px-3 text-center text-main" href="#">Home</a></li>
+                            <li class="nav-item px-1"><a class="nav-link px-3 text-center text-main" href="#">Product</a></li>
+                            <li class="nav-item px-1"><a class="nav-link px-3 text-center text-main" href="#">Something</a></li>
+                            <li class="nav-item px-1"><a class="nav-link px-3 text-center text-main" href="#">Contacts</a></li>
+                            <li class="profile-avatar nav-item d-flex px-4">
+                                <a href="#"><img class="round-shape" src="./assets/img/avatar.jpg" alt="Avatar"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+        </header>
+
+        <div class="main-content d-flex align-items-stretch mt-5 text-main">
+            <form class="w-100" action="">
+                <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Title</p>
+                    <p class="text-muted h7 mb-2">What is your problem?</p>
+                    <input class=" w-100 text-main border-none p-2 mb-2" type="text">
+                    <button type="button" class="hidden btn btn-primary">Next</button>
+                </div>
+
+                <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Your problem</p>
+                    <p class="text-muted h7 mb-2">Describe your problem in detail</p>
+                    <textarea class="w-100 text-main border-none p-2 mb-2"></textarea>
+                    <button type="button" class="hidden btn btn-primary">Next</button>
+                </div>
+
+                <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Your solution</p>
+                    <p class="text-muted h7 mb-2">What you found that really helped</p>
+                    <textarea class="w-100 text-main border-none p-2 mb-2"></textarea>
+                    <button type="button" class="hidden btn btn-primary">Next</button>
+                </div>
+
+                <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Solution's reference</p>
+                    <p class="text-muted h7 mb-2">URL to the solution page</p>
+                    <input class="w-100 text-main border-none p-2 mb-2" type="text">
+                    <button type="button" class="hidden btn btn-primary">Next</button>
+                </div>
+
+                <div class="form-item active d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Tags</p>
+                    <p class="text-muted h7 mb-2">What are the categories of this question? What technology is this problem about?</p>
+                    <div class="tag-input w-100 d-flex flex-column mb-2">
+                        <div class="tag-select d-flex align-items-center mb-2 ps-2">
+                            <div class="selected-tag d-flex align-items-center">
+                                <div class="selected-tag-item d-flex align-items-center">
+                                    <p class="p-1">JavaScript</p>
+                                    <i class="ti-close hidden"></i>
+                                </div>
+                                <div class="selected-tag-item d-flex align-items-center">
+                                    <p class="p-1">HTML</p>
+                                    <i class="ti-close"></i>
+                                </div>
+                                <div class="selected-tag-item d-flex align-items-center">
+                                    <p class="p-1">CSS</p>
+                                    <i class="ti-close hidden"></i>
+                                </div>
+                            </div>
+                            <input class="w-100 text-main border-none p-2" type="text">
+                        </div>
+                        <div class="tag-list d-flex flex-column align-items-start">
+                            <div class="tag-item w-100 ps-3 py-2">Item 0</div>
+                            <div class="tag-item w-100 ps-3 py-2">Item 1</div>
+                            <div class="tag-item w-100 ps-3 py-2">Item 2</div>
+                            <div class="tag-item w-100 ps-3 py-2">Item 3</div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary">Add problem</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="footer">
+            <footer>
+                <p class="text-main text-center">Created by Anh Dinh - 2023</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

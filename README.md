@@ -17,8 +17,9 @@ Feature?
         * Solution
         => Should allow user to input images, code blocks, and basic text format
     + Reference (URL to Stackoverflow + Which specific response solved the problem)
-    + Tags/categorize
+    + Tags/categorize (act as Notion's selection)
     + Date created (automated)
+    -> Allow input at most 1 field at a time, from top to bottom (using JS to store an array of input elements, and move around these elements)
 
 
 Future development: 

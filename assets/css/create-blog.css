@@ -1,0 +1,56 @@
+.main-content {
+    background-color: var(--white-green);
+    padding: 10px 20px;
+}
+
+.h7 {
+    font-size: 0.9rem;
+}
+
+.active {
+    background-color: var(--white-green);
+    opacity: 1 !important;
+}
+
+.main-content .form-item {
+    opacity: .3;
+}
+
+.main-content .form-item input,
+.main-content .form-item textarea {
+    background-color: var(--white-green);
+    border: 1px solid var(--dark-green);
+    outline: none;
+}
+
+.main-content .form-item textarea:focus,
+.main-content .form-item input:focus {
+    outline: 1px inset var(--white-green);
+}
+
+
+.main-content .form-item .tag-select {
+    border: 1px solid var(--dark-green);
+}
+
+.main-content .form-item .tag-input .selected-tag-item {
+    padding: 0 5px;
+}
+
+.main-content .form-item input:last-child {
+    border: none;
+    outline: none;
+}
+
+.main-content .form-item textarea {
+    min-height: 200px;
+}
+
+.tag-item:hover {
+    color: var(--white-green);
+    background-color: var(--dark-green);
+}
+
+i.ti-close {
+    font-size: 0.7rem;
+}
