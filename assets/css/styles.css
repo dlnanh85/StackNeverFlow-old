@@ -14,6 +14,9 @@ body {
     background-repeat: repeat-y;
     background-size: 100% auto;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 * {
@@ -106,6 +109,20 @@ p {
     cursor: pointer;
 }
 
+.add-new {
+    background-color: #78C478;
+    font-size: 1.1rem;
+}
+
+.add-new:hover {
+    background-color: #7FCC86;
+    cursor: pointer;
+}
+
+.add-new a {
+    text-decoration: none;
+}
+
 /* BLOG */
 .blog-item {
     padding: 24px;
@@ -171,10 +188,6 @@ p {
 
 .footer {
     height: 3rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     color: var(--brighter-dark-green);
 }
 
