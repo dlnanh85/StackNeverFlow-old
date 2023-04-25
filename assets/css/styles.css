@@ -50,10 +50,6 @@ p {
     color: var(--brighter-dark-green) !important;
 }
 
-.text-dark {
-    color: var(--dark-green) !important;
-}
-
 .shaded-bg {
     background-color: rgba(0, 0, 0, 0.5);
 }
