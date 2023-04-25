@@ -5,7 +5,7 @@ blogItems.forEach(blogitem => {
     blogitem.addEventListener('click', (event) => {
         event.preventDefault()
         url = blogitem.getAttribute('data-url')
-        window.location.href = 'tmp.html'
+        window.location.href = 'blog-read.html'
     })
 });
 
