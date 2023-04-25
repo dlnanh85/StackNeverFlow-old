@@ -1,5 +1,8 @@
 This is my first web project:
 
+This is a web project, for my personal use (and for practicing web programming, of course). This web is a blog-like website, where I can store all my encountered problem, and its solution I found on Stack Overflow (or anywhere), using my tone, my understanding of the solution. So that I can easily find it, whenever I encounter it again.
+
+
 What may include?
 - A page to list all the blogs
 - A page to serve each blog
