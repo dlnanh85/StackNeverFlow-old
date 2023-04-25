@@ -53,20 +53,4 @@
     .main-content {
         margin-top: 20px !important;
     }
-
-    .blog-item {
-        max-height: 200px;
-    }
-    
-    .blog-item .img-dominant-tech {
-        display: none;
-    }
-
-    .blog-item .blog-title {
-        font-size: 2rem !important;
-    }
-
-    .blog-item .blog-shorten-content {
-        overflow: hidden;
-    }
 }
