@@ -1,3 +1,10 @@
+:root {
+    --dark-green: #667066;
+    --brighter-dark-green: #808880;
+
+    --white-green: #f9fff9;
+}
+
 html {
     height: 100%;
 }
@@ -33,12 +40,16 @@ p {
     margin: 0;
 }
 
+.text-white {
+    color: var(--white-green) !important;
+}
+
 .text-main {
-    color: #555;
+    color: var(--dark-green);
 }
 
 .text-muted {
-    color: #ddd !important;
+    color: var(--brighter-dark-green) !important;
 }
 
 .shaded-bg {

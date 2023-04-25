@@ -39,25 +39,67 @@
                 </nav>
         </header>
 
-        <div class="main-content max-vh-80 d-flex align-items-stretch mt-5 text-white">
-            <div class="blog-list">
-                <div class="blog-item shaded-bg">
-                    <div class="blog-info">
-                        <img class="img-dominant-tech" src="./assets/img/html_logo.png" alt="">
-                        <div class="blog-info-text">
-                            <h1 class="blog-title">What is Lorem Ipsum?</h1>
-                            <p class="blog-tag text-muted">Tags: 
-                                <a class="text-muted" href="#">JavaScript</a>,
-                                <a class="text-muted" href="#">HTML</a>,
-                                <a class="text-muted" href="#">CSS</a>
-                            </p>
+        <div class="main-content d-flex align-items-stretch mt-5 text-main">
+            <form class="w-100" action="">
+                <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Title</p>
+                    <p class="text-muted h7 mb-2">What is your problem?</p>
+                    <input class=" w-100 text-main border-none p-2 mb-2" type="text">
+                    <button type="button" class="hidden btn btn-primary">Next</button>
+                </div>
+
+                <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Your problem</p>
+                    <p class="text-muted h7 mb-2">Describe your problem in detail</p>
+                    <textarea class="w-100 text-main border-none p-2 mb-2"></textarea>
+                    <button type="button" class="hidden btn btn-primary">Next</button>
+                </div>
+
+                <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Your solution</p>
+                    <p class="text-muted h7 mb-2">What you found that really helped</p>
+                    <textarea class="w-100 text-main border-none p-2 mb-2"></textarea>
+                    <button type="button" class="hidden btn btn-primary">Next</button>
+                </div>
+
+                <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Solution's reference</p>
+                    <p class="text-muted h7 mb-2">URL to the solution page</p>
+                    <input class="w-100 text-main border-none p-2 mb-2" type="text">
+                    <button type="button" class="hidden btn btn-primary">Next</button>
+                </div>
+
+                <div class="form-item active d-flex flex-column align-items-start mb-1 p-2">
+                    <p class="h5 mb-1">Tags</p>
+                    <p class="text-muted h7 mb-2">What are the categories of this question? What technology is this problem about?</p>
+                    <div class="tag-input w-100 d-flex flex-column mb-2">
+                        <div class="tag-select d-flex align-items-center mb-2 ps-2">
+                            <div class="selected-tag d-flex align-items-center">
+                                <div class="selected-tag-item d-flex align-items-center">
+                                    <p class="p-1">JavaScript</p>
+                                    <i class="ti-close hidden"></i>
+                                </div>
+                                <div class="selected-tag-item d-flex align-items-center">
+                                    <p class="p-1">HTML</p>
+                                    <i class="ti-close"></i>
+                                </div>
+                                <div class="selected-tag-item d-flex align-items-center">
+                                    <p class="p-1">CSS</p>
+                                    <i class="ti-close hidden"></i>
+                                </div>
+                            </div>
+                            <input class="w-100 text-main border-none p-2" type="text">
+                        </div>
+                        <div class="tag-list d-flex flex-column align-items-start">
+                            <div class="tag-item w-100 ps-3 py-2">Item 0</div>
+                            <div class="tag-item w-100 ps-3 py-2">Item 1</div>
+                            <div class="tag-item w-100 ps-3 py-2">Item 2</div>
+                            <div class="tag-item w-100 ps-3 py-2">Item 3</div>
                         </div>
                     </div>
-                    <div class="blog-shorten-content">    
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-                    </div>
+                    <button type="button" class="btn btn-primary">Add problem</button>
                 </div>
-            </div>
+            </form>
         </div>
 
         <div class="footer">
