@@ -14,7 +14,6 @@ body {
     background-repeat: repeat-y;
     background-size: 100% auto;
     box-sizing: border-box;
-    height: 100%;
 }
 
 * {
@@ -175,7 +174,12 @@ p {
 }
 
 .footer {
-    padding-bottom: 10px;
+    height: 3rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: var(--brighter-dark-green);
 }
 
 @keyframes tagHover {
