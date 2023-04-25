@@ -3,10 +3,6 @@
     padding: 10px 20px;
 }
 
-.h7 {
-    font-size: 0.9rem;
-}
-
 .active {
     background-color: var(--white-green);
     opacity: 1 !important;
