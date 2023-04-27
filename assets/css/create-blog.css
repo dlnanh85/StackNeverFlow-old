@@ -50,3 +50,18 @@
 i.ti-close {
     font-size: 0.7rem;
 }
+
+.tag-input {
+    position: relative;
+}
+
+.tag-list {
+    background-color: var(--white-green);
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    max-height: 150px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-shadow: 0px 0px 1px 1px rgba(200,210,200,1);
+}
