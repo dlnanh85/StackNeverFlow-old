@@ -24,12 +24,10 @@
     outline: 1px inset var(--white-green);
 }
 
-.main-content .buttons button {
-}
-
 
 .main-content .form-item .tag-select {
     border: 1px solid var(--dark-green);
+    overflow: auto;
 }
 
 .main-content .form-item .tag-input .selected-tag-item {
@@ -54,6 +52,10 @@
 i.ti-close {
     font-size: 0.7rem;
     display: none;
+}
+
+.selected-tag-item p {
+    white-space: nowrap;
 }
 
 .selected-tag-item:hover {
