@@ -24,6 +24,9 @@
     outline: 1px inset var(--white-green);
 }
 
+.main-content .buttons button {
+}
+
 
 .main-content .form-item .tag-select {
     border: 1px solid var(--dark-green);
@@ -43,10 +46,20 @@
 }
 
 .tag-item:hover {
+    cursor: pointer;
     color: var(--white-green);
     background-color: var(--dark-green);
 }
 
 i.ti-close {
     font-size: 0.7rem;
+    display: none;
+}
+
+.selected-tag-item:hover {
+    cursor: pointer;
+}
+
+.selected-tag-item:hover .ti-close {
+    display: block;
 }

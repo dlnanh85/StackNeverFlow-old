@@ -42,32 +42,31 @@
                 <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Title</p>
                     <p class="text-muted h7 mb-2">What is your problem?</p>
-                    <input class=" w-100 text-main border-none p-2 mb-2" type="text">
-                    <button type="button" class="hidden btn btn-primary">Next</button>
+                    <input disabled class="w-100 text-main border-none p-2 mb-2" type="text">
+                    <button disabled type="button" class="btn btn-primary">Next</button>
                 </div>
 
                 <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Your problem</p>
                     <p class="text-muted h7 mb-2">Describe your problem in detail</p>
-                    <textarea class="w-100 text-main border-none p-2 mb-2"></textarea>
-                    <button type="button" class="hidden btn btn-primary">Next</button>
+                    <textarea disabled class="w-100 text-main border-none p-2 mb-2"></textarea>
+                    <button disabled type="button" class="hidden btn btn-primary">Next</button>
                 </div>
 
                 <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Your solution</p>
                     <p class="text-muted h7 mb-2">What you found that really helped</p>
-                    <textarea class="w-100 text-main border-none p-2 mb-2"></textarea>
-                    <button type="button" class="hidden btn btn-primary">Next</button>
+                    <textarea disabled class="w-100 text-main border-none p-2 mb-2"></textarea>
+                    <button disabled type="button" class="hidden btn btn-primary">Next</button>
                 </div>
 
                 <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Solution's reference</p>
                     <p class="text-muted h7 mb-2">URL to the solution page</p>
-                    <input class="w-100 text-main border-none p-2 mb-2" type="text">
-                    <button type="button" class="hidden btn btn-primary">Next</button>
+                    <input disabled class="w-100 text-main border-none p-2 mb-2" type="text">
+                    <button disabled type="button" class="hidden btn btn-primary">Next</button>
                 </div>
-
-                <div class="form-item active d-flex flex-column align-items-start mb-1 p-2">
+                <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Tags</p>
                     <p class="text-muted h7 mb-2">What are the categories of this question? What technology is this problem about?</p>
                     <div class="tag-input w-100 d-flex flex-column mb-2">
@@ -75,7 +74,7 @@
                             <div class="selected-tag d-flex align-items-center">
                                 <div class="selected-tag-item d-flex align-items-center">
                                     <p class="p-1">JavaScript</p>
-                                    <i class="ti-close hidden"></i>
+                                    <i class="ti-close"></i>
                                 </div>
                                 <div class="selected-tag-item d-flex align-items-center">
                                     <p class="p-1">HTML</p>
@@ -83,19 +82,16 @@
                                 </div>
                                 <div class="selected-tag-item d-flex align-items-center">
                                     <p class="p-1">CSS</p>
-                                    <i class="ti-close hidden"></i>
+                                    <i class="ti-close"></i>
                                 </div>
                             </div>
-                            <input class="w-100 text-main border-none p-2" type="text">
+                            <input disabled class="w-100 text-main border-none p-2" type="text">
                         </div>
-                        <div class="tag-list d-flex flex-column align-items-start">
-                            <div class="tag-item w-100 ps-3 py-2">Item 0</div>
-                            <div class="tag-item w-100 ps-3 py-2">Item 1</div>
-                            <div class="tag-item w-100 ps-3 py-2">Item 2</div>
-                            <div class="tag-item w-100 ps-3 py-2">Item 3</div>
+                        <div class="tag-list hidden d-flex flex-column align-items-start">
+                            
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary">Add problem</button>
+                    <button disabled type="button" class="hidden btn btn-primary">Add problem</button>
                 </div>
             </form>
         </div>
@@ -108,6 +104,7 @@
     </div>
 
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/create-blog.js"></script>
 </body>
 
 </html>

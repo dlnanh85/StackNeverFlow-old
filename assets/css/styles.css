@@ -34,7 +34,7 @@ p {
 
 /* SEMANTIC */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .text-white {
