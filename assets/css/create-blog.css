@@ -27,6 +27,7 @@
 
 .main-content .form-item .tag-select {
     border: 1px solid var(--dark-green);
+    overflow: auto;
 }
 
 .main-content .form-item .tag-input .selected-tag-item {
@@ -43,12 +44,26 @@
 }
 
 .tag-item:hover {
+    cursor: pointer;
     color: var(--white-green);
     background-color: var(--dark-green);
 }
 
 i.ti-close {
     font-size: 0.7rem;
+    display: none;
+}
+
+.selected-tag-item p {
+    white-space: nowrap;
+}
+
+.selected-tag-item:hover {
+    cursor: pointer;
+}
+
+.selected-tag-item:hover .ti-close {
+    display: block;
 }
 
 .tag-input {
@@ -64,4 +79,9 @@ i.ti-close {
     overflow-x: hidden;
     overflow-y: scroll;
     box-shadow: 0px 0px 1px 1px rgba(200,210,200,1);
+}
+
+.disabled {
+    opacity: 1 !important;
+    background-color: rgba(13, 110, 253, 0.7) !important;
 }
