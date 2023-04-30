@@ -124,8 +124,9 @@ function renderTagSelected(tagsSelected) {
         child1.classList.add('p-1');
         child1.innerText = tag;
 
-        let child2 = document.createElement('i');
-        child2.classList.add('ti-close');
+        let child2 = document.createElement('p');
+        child2.classList.add('rm-tag');
+        child2.innerHTML = '&times;';
 
         tagObj.append(child1, child2);
 
