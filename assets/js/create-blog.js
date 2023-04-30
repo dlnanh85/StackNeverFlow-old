@@ -33,17 +33,16 @@ formFields.forEach((item, index) => {
 
 
 // TAGS HANDLE
-
-let tagsSelect = [
+const tags = [
     'JavaScript',
     'Python',
     'HTML',
     'CSS',
     'Java',
-    'PHP',
-    'Ruby',
-]
-let tagsSelected = [];
+    'PHP'
+];
+let tagSelects = [...tags];
+let tagSelecteds = [];
 
 let selectContainer = document.getElementsByClassName('tag-list')[0];
 let selectedContainer = document.getElementsByClassName('selected-tag')[0];
@@ -71,15 +70,15 @@ tagInput.oninput = () => {
     }
 }
 
-renderTagSelect(tagsSelect);
-renderTagSelected(tagsSelected);
+renderTagSelect(tagSelects);
+renderTagSelected(tagSelecteds);
 
-function renderTagSelect(tagsSelect) {
+function renderTagSelect(tagSelects) {
     selectContainer.innerHTML = '<div class="tag-item tag-item-create hidden w-100 ps-3 py-2"></div>';
     createTag = selectContainer.querySelector('.tag-item-create');
     createTagHandle();
 
-    let tagsSelectObjs = tagsSelect.map((tag, index) => {
+    let tagsSelectObjs = tagSelects.map((tag, index) => {
         let tagObj = document.createElement('div');
         tagObj.classList.add('tag-item', 'w-100', 'ps-3', 'py-2');
         tagObj.innerText = tag;
@@ -92,11 +91,11 @@ function renderTagSelect(tagsSelect) {
 
         tagObj.onclick = () => {
             // REMOVE FROM TagsSelect
-            tagsSelect.splice(tagsSelect.indexOf(tagObj.innerText), 1);
-            renderTagSelect(tagsSelect);
+            tagSelects.splice(tagSelects.indexOf(tagObj.innerText), 1);
+            renderTagSelect(tagSelects);
             // ADD TO TagsSelected
-            tagsSelected.push(tagObj.innerText);
-            renderTagSelected(tagsSelected);
+            tagSelecteds.push(tagObj.innerText);
+            renderTagSelected(tagSelecteds);
             // CLEAR input
             tagInput.value = '';
         }
@@ -106,8 +105,8 @@ function renderTagSelect(tagsSelect) {
     });
 }
 
-function renderTagSelected(tagsSelected) {
-    if (tagsSelected.length === 0) {
+function renderTagSelected(tagSelecteds) {
+    if (tagSelecteds.length === 0) {
         document.querySelector('.tag-input + button').classList.add('disabled');
     }
     else {
@@ -116,12 +115,12 @@ function renderTagSelected(tagsSelected) {
 
     selectedContainer.innerHTML = '';
 
-    let tagsSelectedObjs = tagsSelected.map((tag, index) => {
+    let tagsSelectedObjs = tagSelecteds.map((tag, index) => {
         let tagObj = document.createElement('div');
         tagObj.classList.add('selected-tag-item', 'd-flex', 'align-items-center');
         
         let child1 = document.createElement('p');
-        child1.classList.add('p-1');
+        child1.classList.add('tag-name', 'p-1');
         child1.innerText = tag;
 
         let child2 = document.createElement('p');
@@ -137,12 +136,13 @@ function renderTagSelected(tagsSelected) {
         selectedContainer.append(tagObj);
 
         tagObj.onclick = () => {
-            // REMOVE FROM tagsSelected
-            tagsSelected.splice(tagsSelected.indexOf (tagObj.innerText), 1);
-            renderTagSelected(tagsSelected);
-            // ADD TO tagsSelect
-            tagsSelect.push(tagObj.innerText);
-            renderTagSelect(tagsSelect);
+            let tagName = tagObj.querySelector('.tag-name');
+            // REMOVE FROM tagSelecteds
+            tagSelecteds.splice(tagSelecteds.indexOf (tagName.innerText), 1);
+            renderTagSelected(tagSelecteds);
+            // ADD TO tagSelects
+            tagSelects.push(tagName.innerText);
+            renderTagSelect(tagSelects);
         }
         tagObj.onmousedown = (event) => {
             event.preventDefault();
@@ -155,8 +155,8 @@ function renderTagSelected(tagsSelected) {
 function createTagHandle() {
     createTag.onclick = () => {
         // ADD TO TagsSelected
-        tagsSelected.push(tagInput.value);
-        renderTagSelected(tagsSelected);
+        tagSelecteds.push(tagInput.value);
+        renderTagSelected(tagSelecteds);
         // CLEAR input
         tagInput.value = '';
         createTag.classList.add('hidden');
@@ -164,4 +164,29 @@ function createTagHandle() {
     createTag.onmousedown = (event) => {
         event.preventDefault();
     }
+}
+
+
+
+// HANDLE CREATE BLOG
+let submitButton = document.querySelector('button[type="submit"]')
+submitButton.onclick = (e) => {
+    e.preventDefault();
+
+    createBlog();
+
+    // console.log([document.forms['blog-create']['problem']])
+
+    document.forms['blog-create'].submit();
+}
+
+
+function createBlog() {
+    let form = document.forms['blog-create'];
+    form['author-id'].value = 1;
+    form['tag-ids'].value = JSON.stringify(tagSelecteds.map(tag => {
+        return tags.indexOf(tag)
+    }));
+
+    return true;
 }
