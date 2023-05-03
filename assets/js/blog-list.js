@@ -1,22 +1,13 @@
-const blogApi = "http://localhost:3000/blogs";
-const tagApi = "http://localhost:3000/tags";
+
 
 function start() {
-    handleBlogList(renderBlogList);
+    readBlog(renderBlogList);
 }
 
 start();
 
 
-function handleBlogList(callback) {
-    Promise.all([fetch(blogApi), fetch(tagApi)])
-        .then((responses) => {
-            return Promise.all(responses.map((response) => response.json()))
-        })
-        .then((datas) => {
-            callback(datas)
-        })
-}
+
 
 function renderBlogList(datas) {
     let blogs = datas[0];
@@ -26,9 +17,9 @@ function renderBlogList(datas) {
     
     let blogsHtml = blogs.map((blog) => {
         let tagsHtml = tags
-            .filter((tag) => blog['tag-id'].includes(tag.id))
+            .filter((tag) => blog['tag-ids'].includes(tag.id))
             .map((tag) => {
-                return `<a class="text-muted" href="#">${tag.name}</a>`
+                return `<a class="text-muted" href="#"> ${tag.name}</a>`
             })
             .join(',');
 
@@ -46,6 +37,17 @@ function renderBlogList(datas) {
                 <div class="blog-shorten-content">    
                     <p>${blog.problem}</p>
                 </div>
+                <div class="blog-option">
+                    <p class="option-button round-shape">&hellip;</p>
+                    <div class="option-container hidden">
+                        <a href="edit-blog.html">
+                            <div class="option-item px-3 py-2">Edit</div>
+                        </a>
+                        <a href="">
+                            <div class="option-item px-3 py-2">Delete</div>
+                        </a>
+                    </div>
+                </div>
             </div>
         `);
     }).join('');
@@ -53,4 +55,59 @@ function renderBlogList(datas) {
     
     let blogListContainer = document.querySelector('.blog-list');
     blogListContainer.innerHTML = blogsHtml;
+
+    blogItemClicksHandle();
+}
+
+
+// Redirect to item
+function blogItemClicksHandle() {
+    
+    // Click on item to view blog
+    let blogItems = document.querySelectorAll('.blog-item')
+    blogItems.forEach(blogitem => {
+        blogitem.onclick = (event) => {
+            event.preventDefault();
+            url = blogitem.getAttribute('data-url')
+            window.location.href = 'blog-read.html'
+        }});
+    
+        
+    // Click on tags to view tags
+    let blogTags = document.querySelectorAll('.blog-tag a')
+    blogTags.forEach(tag => {
+        tag.onclick = (event) => {
+            event.stopPropagation()
+        }
+    });
+
+    // Click on option button to open option
+    let blogOptions = document.querySelectorAll('.blog-option');
+    blogOptions.forEach((option) => {
+        // Handle option button
+        let optionButton = option.querySelector('.option-button');
+        optionButton.onclick = (event) => {
+            event.stopPropagation();
+            
+            let optionContainer = option.querySelector('.option-container');
+            if (optionContainer.classList.contains('hidden')) {
+                optionContainer.classList.remove('hidden');
+            }
+            else {
+                optionContainer.classList.add('hidden');
+            }
+            document.body.onclick = () => {
+                if (!optionContainer.classList.contains('hidden')) {
+                    optionContainer.classList.add('hidden');
+                }
+            }
+        }
+        // Handle option list
+        let optionItems = option.querySelectorAll('.option-item');
+        optionItems.forEach((item) => {
+            item.onclick = (event) => {
+                event.stopPropagation();
+            }
+        })
+    })
 }

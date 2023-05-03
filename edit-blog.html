@@ -15,6 +15,7 @@
     <link href="./assets/css/styles.css" rel="stylesheet">
     <link href="./assets/css/responsive.css" rel="stylesheet">
     <link href="./assets/css/create-blog.css" rel="stylesheet">
+    <link href="./assets/css/edit-blog.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,36 +39,33 @@
         </header>
 
         <div class="main-content d-flex align-items-stretch my-5 text-main">
-            <form name="blog-create" class="w-100" action="http://localhost:3000/blogs" method="post">
+            <form name="blog-edit" class="w-100" action="http://localhost:3000/blogs" method="post">
                 <input type="hidden" name="author-id">
                 <input type="hidden" name="tag-ids">
+                <input type="hidden" name="id">
 
                 <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Title</p>
                     <p class="text-muted h7 mb-2">What is your problem?</p>
-                    <input name="title" disabled class="w-100 text-main border-none p-2 mb-2" type="text">
-                    <button disabled type="button" class="btn btn-primary">Next</button>
+                    <input name="title" class="w-100 text-main border-none p-2 mb-2" type="text">
                 </div>
 
                 <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Your problem</p>
                     <p class="text-muted h7 mb-2">Describe your problem in detail</p>
-                    <textarea name="problem" disabled class="w-100 text-main border-none p-2 mb-2"></textarea>
-                    <button disabled type="button" class="hidden btn btn-primary">Next</button>
+                    <textarea name="problem" class="w-100 text-main border-none p-2 mb-2"></textarea>
                 </div>
 
                 <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Your solution</p>
                     <p class="text-muted h7 mb-2">What you found that really helped</p>
-                    <textarea name="solution" disabled class="w-100 text-main border-none p-2 mb-2"></textarea>
-                    <button disabled type="button" class="hidden btn btn-primary">Next</button>
+                    <textarea name="solution" class="w-100 text-main border-none p-2 mb-2"></textarea>
                 </div>
 
                 <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Solution's reference</p>
                     <p class="text-muted h7 mb-2">URL to the solution page</p>
-                    <input name="reference" disabled class="w-100 text-main border-none p-2 mb-2" type="text">
-                    <button disabled type="button" class="hidden btn btn-primary">Next</button>
+                    <input name="reference" class="w-100 text-main border-none p-2 mb-2" type="text">
                 </div>
                 <div class="form-item d-flex flex-column align-items-start mb-1 p-2">
                     <p class="h5 mb-1">Tags</p>
@@ -77,13 +75,13 @@
                             <div class="selected-tag d-flex align-items-center">
                                 <!-- EMPTY ON PURPOSE -->
                             </div>
-                            <input disabled class="w-100 text-main border-none p-2" type="text">
+                            <input class="w-100 text-main border-none p-2" type="text">
                         </div>
                         <div class="tag-list hidden d-flex flex-column align-items-start">
                             <!-- EMPTY ON PURPOSE -->
                         </div>
                     </div>
-                    <button type="submit" class="disabled hidden btn btn-primary">Add problem</button>
+                    <button type="submit" class="btn btn-primary">Edit problem</button>
                     <!-- this buttons require a overwritten disabled class, instead of a disabled attribute 
                         because opacity property comes with disabled attribute or Bootstrap's disabled class causes strange behaviour-->
 
@@ -100,7 +98,7 @@
     </div>
 
     <script src="./assets/js/script.js"></script>
-    <script type="module" src="./assets/js/create-blog.js"></script>
+    <script type="module" src="./assets/js/edit-blog.js"></script>
 </body>
 
 </html>

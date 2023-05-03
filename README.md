@@ -31,5 +31,14 @@ Future development:
     + Add, remove blogs
 - Set privacy for blogs (public or private...)
 
-TODO list:
-- Modify index.html to show blog bases
+TODO list 3/5/2023
+- Refactor JavaScript to support module imports
+- Finish CRUD for blogs
+- Apply Flask
+
+
+
+TODO list further:
+- CRUD for Tags
+- Form authentication
+- User session

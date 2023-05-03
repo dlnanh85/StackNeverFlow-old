@@ -1,35 +1,16 @@
-// Redirect to item
-blogItems = document.querySelectorAll('.blog-item')
-
-blogItems.forEach(blogitem => {
-    blogitem.addEventListener('click', (event) => {
-        event.preventDefault()
-        url = blogitem.getAttribute('data-url')
-        window.location.href = 'blog-read.html'
-    })
-});
-
-blogTags = document.querySelectorAll('.blog-tag a')
-
-blogTags.forEach(tag => {
-    tag.addEventListener('click', (event) => {
-        event.stopPropagation()
-    })
-})
-
 // Responsive navbar show/hide by button
-nav = document.querySelector('nav')
-navButton = document.querySelector('.ti-menu')
+let nav = document.querySelector('nav')
+let navButton = document.querySelector('.ti-menu')
 
 if (window.innerWidth <= 1023) {
     isNavShown = false
     toggleNav(isNavShown)
 
-    navButton.addEventListener('click', (event) => {
+    navButton.onclick = (event) => {
         isNavShown = isNavShown? false : true
         toggleNav(isNavShown)
         event.stopPropagation()
-    })
+    }
 
     function toggleNav(isNavShown) {
         if (!isNavShown) 
@@ -41,10 +22,10 @@ if (window.innerWidth <= 1023) {
     // Exit nav by touching anywhere else
     body = document.querySelector('body')
 
-    body.addEventListener('click', () => {
+    body.onclick = () => {
         if (isNavShown) {
             isNavShown = false
             toggleNav(isNavShown)
         }
-    })
+    }
 }

@@ -19,6 +19,7 @@
 
 /* BLOG */
 .blog-item {
+    position: relative;
     padding: 24px;
     margin-bottom: 10px;
     display: flex;
@@ -43,6 +44,53 @@
     margin-left: 10px;
     margin-right: 20px;
     animation: blogItemHover-img-reversed 0.5s ease forwards;
+}
+
+.blog-item .blog-option {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.blog-item .blog-option .option-button {
+    border-radius: 50%;
+    padding: 10px;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.blog-item .option-container {
+    position: relative;
+    right: 50%;
+    top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-green);
+    box-shadow: 0px 0px 1px 1px rgba(200,210,200,1);
+}
+
+.blog-item .option-container a {
+    text-decoration: none;
+}
+
+.blog-item .option-container .option-item {
+    color: var(--dark-green);
+}
+
+.blog-item .blog-option .option-button:hover {
+    background-color: var(--dark-green);
+    color: var(--white-green);
+}
+
+.blog-item .option-container .option-item:hover {
+    cursor: pointer;
+    color: var(--white-green) ;
+    background-color: var(--dark-green);
 }
 
 .blog-item:hover {
