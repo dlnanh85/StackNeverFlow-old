@@ -1,4 +1,4 @@
-import { activeItems, handleTextInput, handleTagInput, handleForm } from "./module/create-blog.js";
+import { activeItems, handleTextInput, handleTagInput, handleForm } from "./module/edit-blog-module.js";
 import { createBlog } from "./module/crud.js";
 
 

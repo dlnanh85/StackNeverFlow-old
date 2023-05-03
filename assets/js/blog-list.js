@@ -1,12 +1,13 @@
-
+import { readBlog, deleteBlog } from "./module/crud.js";
 
 function start() {
-    readBlog(renderBlogList);
+    readBlog((data) => {
+        renderBlogList(data);
+        blogItemClicksHandle();
+    });
 }
 
 start();
-
-
 
 
 function renderBlogList(datas) {
@@ -14,9 +15,9 @@ function renderBlogList(datas) {
 
     let tags = datas[1];
 
-    
-    let blogsHtml = blogs.map((blog) => {
-        let tagsHtml = tags
+    blogs = blogs.map((blog) => {
+        console.log(tags.filter);
+        let blogTags = tags
             .filter((tag) => blog['tag-ids'].includes(tag.id))
             .map((tag) => {
                 return `<a class="text-muted" href="#"> ${tag.name}</a>`
@@ -24,13 +25,13 @@ function renderBlogList(datas) {
             .join(',');
 
         return (`
-            <div class="blog-item d-flex flex-column p-4 mb-3 shaded-bg">
+            <div data-id="${blog['id']}" class="blog-item d-flex flex-column p-4 mb-3 shaded-bg">
                 <div class="blog-info">
                     <img class="img-dominant-tech" src="./assets/img/html_logo.png" alt="">
                     <div class="blog-info-text">
                         <h1 class="blog-title">${blog.title}</h1>
                         <p class="tag text-muted">Tags: 
-                            ${tagsHtml}
+                            ${blogTags}
                         </p>
                     </div>
                 </div>
@@ -41,10 +42,10 @@ function renderBlogList(datas) {
                     <p class="option-button round-shape">&hellip;</p>
                     <div class="option-container hidden">
                         <a href="edit-blog.html">
-                            <div class="option-item px-3 py-2">Edit</div>
+                            <div data-option="edit" class="option-item px-3 py-2">Edit</div>
                         </a>
                         <a href="">
-                            <div class="option-item px-3 py-2">Delete</div>
+                            <div data-option="delete" class="option-item px-3 py-2">Delete</div>
                         </a>
                     </div>
                 </div>
@@ -53,40 +54,38 @@ function renderBlogList(datas) {
     }).join('');
     
     
-    let blogListContainer = document.querySelector('.blog-list');
-    blogListContainer.innerHTML = blogsHtml;
-
-    blogItemClicksHandle();
+    document.querySelector('.blog-list').innerHTML = blogs;
 }
 
 
 // Redirect to item
 function blogItemClicksHandle() {
-    
-    // Click on item to view blog
-    let blogItems = document.querySelectorAll('.blog-item')
-    blogItems.forEach(blogitem => {
-        blogitem.onclick = (event) => {
-            event.preventDefault();
-            url = blogitem.getAttribute('data-url')
-            window.location.href = 'blog-read.html'
-        }});
-    
-        
-    // Click on tags to view tags
-    let blogTags = document.querySelectorAll('.blog-tag a')
-    blogTags.forEach(tag => {
-        tag.onclick = (event) => {
-            event.stopPropagation()
-        }
-    });
+    // ITEM CLICK
+    document.querySelectorAll('.blog-item')
+    .forEach(blogItem => {
 
-    // Click on option button to open option
-    let blogOptions = document.querySelectorAll('.blog-option');
-    blogOptions.forEach((option) => {
+        blogItem.onclick = (event) => {
+            event.preventDefault();
+            // url = blogItem.getAttribute('data-url')
+            window.location.href = 'blog-read.html'
+        }
+
+        
+        // TAG CLICK
+        blogItem.querySelectorAll('.blog-tag a')
+        .forEach(tag => {
+            tag.onclick = (event) => {
+                event.stopPropagation()
+            }
+        });
+
+
+        // OPTION CLICK
+        let option = blogItem.querySelector('.blog-option')
+
         // Handle option button
-        let optionButton = option.querySelector('.option-button');
-        optionButton.onclick = (event) => {
+        option.querySelector('.option-button')
+        .onclick = (event) => {
             event.stopPropagation();
             
             let optionContainer = option.querySelector('.option-container');
@@ -107,7 +106,15 @@ function blogItemClicksHandle() {
         optionItems.forEach((item) => {
             item.onclick = (event) => {
                 event.stopPropagation();
+                event.preventDefault();
+
+                if (item.getAttribute('data-option') === 'edit') {
+                    window.location.href = 'edit-blog.html';
+                }
+                else if (item.getAttribute('data-option') === 'delete') {
+                    deleteBlog(blogItem.getAttribute('data-id'), start);
+                }
             }
         })
-    })
+    });
 }

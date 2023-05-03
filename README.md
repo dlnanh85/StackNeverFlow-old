@@ -32,8 +32,8 @@ Future development:
 - Set privacy for blogs (public or private...)
 
 TODO list 3/5/2023
-- Refactor JavaScript to support module imports
-- Finish CRUD for blogs
+- Refactor JavaScript to support module imports - DONE
+- Finish CRUD for blogs - STILL HAVE blog-read
 - Apply Flask
 
 

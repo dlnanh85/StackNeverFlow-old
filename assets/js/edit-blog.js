@@ -1,5 +1,5 @@
 import { readBlog, updateBlog } from "./module/crud.js";
-import { handleTagInput, handleForm } from "./module/create-blog.js";
+import { handleTagInput, handleForm } from "./module/edit-blog-module.js";
 
 
 function start() {

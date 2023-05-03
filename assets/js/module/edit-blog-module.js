@@ -1,6 +1,7 @@
 import {
     readTag,
     createTag,
+    deleteBlog,
 } from './crud.js';
 
 
