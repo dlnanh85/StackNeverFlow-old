@@ -31,8 +31,7 @@ Future development:
     + Add, remove blogs
 - Set privacy for blogs (public or private...)
 
-TODO list 3/5/2023
-- Refactor JavaScript to support module imports - DONE
+TODO list 4/5/2023
 - Finish CRUD for blogs - STILL HAVE blog-read
 - Apply Flask
 
