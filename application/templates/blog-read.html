@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block css %}
+    <link href="{{ url_for('static', filename='css/blog-read.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="main-content d-flex flex-column p-4 my-5 text-main">
+        <div class="info mb-3">
+            <p class="title h2 mb-3">Your title here</p>
+            <div class="d-flex mb-2 ">
+                <p class="author me-4">
+                    <i class="ti-user p-1"></i>
+                    Anh Dinh
+                </p>
+                <p class="date">
+                    <i class="ti-calendar p-1"></i>
+                    8 Jan 2023
+                </p>
+            </div>
+            <p class="tag my-1">
+                Tags: 
+                <a href="#">JavaScript</a>,
+                <a href="#">HTML</a>,
+                <a href="#">CSS</a>
+            </p>
+        </div>
+        <div class="content">
+            <div class="problem mb-3">
+                <p class="title h5 mb-1">Problem</p>
+                <p class="text h7">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae corporis quas, eos debitis beatae earum labore quam sapiente, accusantium impedit sequi maxime repellendus minus id culpa, ducimus dolorem odit! Cumque.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae corporis quas, eos debitis beatae earum labore quam sapiente, accusantium impedit sequi maxime repellendus minus id culpa, ducimus dolorem odit! Cumque.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae corporis quas, eos debitis beatae earum labore quam sapiente, accusantium impedit sequi maxime repellendus minus id culpa, ducimus dolorem odit! Cumque.
+                </p>
+            </div>
+            <div class="solution mb-3">
+                <p class="title h5 mb-1">Solution</p>
+                <p class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae corporis quas, eos debitis beatae earum labore quam sapiente, accusantium impedit sequi maxime repellendus minus id culpa, ducimus dolorem odit! Cumque.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae corporis quas, eos debitis beatae earum labore quam sapiente, accusantium impedit sequi maxime repellendus minus id culpa, ducimus dolorem odit! Cumque.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae corporis quas, eos debitis beatae earum labore quam sapiente, accusantium impedit sequi maxime repellendus minus id culpa, ducimus dolorem odit! Cumque.
+                </p>
+            </div>
+            <div class="reference mb-3">
+                <p class="title h5 mb-1">Reference</p>
+                <p class="text">
+                    <a href="https://www.google.com">This is a sample link</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %} {{ url_for('static', filename='js/blog-read.js') }}
+    <script type="module" src="{{ url_for('static', filename='js/blog-read.js') }}"></script>
+{% endblock %}
