@@ -23,4 +23,5 @@
 - CMS (Content Management System)
     + Add, remove users, blogs, tags
     + ...
-- Set privacy for blogs (public or private...) -> Create a social network instead of just storing private blogs.
+- Set privacy for blogs (public or private...) -> Create a social network instead of just storing private blogs
+- Add text format, insert code blocks, images,... to blog editor
