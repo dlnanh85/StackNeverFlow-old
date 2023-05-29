@@ -1,5 +1,10 @@
-from .extension import db
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import ForeignKey
+from dataclasses import dataclass
+
+
+db = SQLAlchemy()
+dbsession = db.session
 
 
 class User(db.Model):
@@ -14,13 +19,14 @@ class User(db.Model):
         self.password = password
 
 
+@dataclass
 class Blog(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    author_id = db.Column(db.Integer, ForeignKey('user.id'))
-    title = db.Column(db.String(1000), nullable=False)
-    problem = db.Column(db.String(1000), nullable=False)
-    solution = db.Column(db.String(1000), nullable=False)
-    reference = db.Column(db.String(1000), nullable=False)
+    id:int = db.Column(db.Integer, primary_key=True)
+    author_id:int = db.Column(db.Integer, ForeignKey('user.id'))
+    title:str = db.Column(db.String(1000), nullable=False)
+    problem:str = db.Column(db.String(1000), nullable=False)
+    solution:str = db.Column(db.String(1000), nullable=False)
+    reference:str = db.Column(db.String(1000), nullable=False)
     
     def __init__(self, author_id, title, problem, solution, reference):
         self.author_id = author_id
