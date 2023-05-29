@@ -182,6 +182,9 @@ function renderTagSelected(tagSelecteds) {
                 tagSelects.push(deselectingTag);
                 renderTagSelect(tagSelects);
             }
+            else {
+                // REMOVE NEW TAG FROM DATABASE
+            }
         };
         tagObj.onmousedown = (event) => {
             event.preventDefault();
@@ -225,9 +228,9 @@ function handleForm(formName, callback) {
             }
         }
 
-        data['author-id'] = 1;
+        data['author_id'] = 1;
         data['id'] = Number(form['id'].value);
-        data['tag-ids'] = tagSelecteds.map((tag) => {
+        data['tag_ids'] = tagSelecteds.map((tag) => {
             if (existedTags.findIndex(existedTag => {
                 for (let index in existedTag) {
                     if (existedTag[index] !== tag[index])
